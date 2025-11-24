@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luke’s Seafood Trading</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Aclonica -->
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet" />
+
+    <style>
+        .navbar {
+            transition: background-color 0.4s ease, opacity 0.4s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Glow Effects for Images Only */
+        .glow-image {
+            filter: drop-shadow(0 0 15px rgba(219, 54, 57, 0.5))
+                    drop-shadow(0 0 30px rgba(219, 54, 57, 0.3));
+        }
+
+        /* Hover Effects for Images */
+        .hover-glow {
+            transition: all 0.3s ease;
+        }
+
+        .hover-glow:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(219, 54, 57, 0.8))
+                    drop-shadow(0 0 40px rgba(219, 54, 57, 0.6));
+        }
+
+        /* Animated Pulse for Buttons */
+        @keyframes pulse-glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px rgba(219, 54, 57, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 25px rgba(219, 54, 57, 0.8))
+                        drop-shadow(0 0 40px rgba(219, 54, 57, 0.5));
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        /* Card Glow Effect for Images */
+        .card-glow {
+            transition: all 0.4s ease;
+        }
+
+        .card-glow:hover {
+            filter: drop-shadow(0 0 30px rgba(219, 54, 57, 0.6))
+                    drop-shadow(0 0 60px rgba(219, 54, 57, 0.4));
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+
+<body class="bg-[#191919] text-white overflow-y-auto overflow-x-hidden">
+
+<!-- Navbar -->
+<header id="navbar" class="navbar fixed top-0 left-0 right-0 z-50 bg-[#DB3639] shadow-md shadow-black/40">
+    <nav class="h-[110px] flex items-center justify-between px-16 transition-all duration-300">
+
+        <!-- LEFT: Brand -->
+        <div class="text-[48px] font-[800]" style="font-family: 'Aclonica', sans-serif;">
+            <a href="homepage.html" class="hover:text-black">Luke’s Seafood Trading</a>
+        </div>
+
+        <!-- RIGHT: Nav Links -->
+        <div class="flex gap-14 text-[48px] font-[800]">
+            <a href="menu.html" class="hover:text-black">Menu</a>
+            <a href="bookbar.html" class="hover:text-black">Book Bar</a>
+            <a href="gallery.html" class="hover:text-black">Gallery</a>
+            <a href="contacts.html" class="hover:text-black">Contacts</a>
+        </div>
+
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main class="pt-[110px] w-full min-h-[4665px] relative overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-[1057px]">
+        <img src="/images/bookbarbanner.webp" class="w-full h-full object-cover opacity-80" alt="Bookbarbanner" />
+
+        <!-- Order Button -->
+        <div class="absolute top-[800px] left-[1300px]">
+            <a href="#event-booking">
+                <img src="/images/booknow.webp" class="w-[415px] h-[126px] cursor-pointer hover-glow pulse-glow" alt="Book Now" />
+            </a>
+        </div>
+
+        <!-- Sushi -->
+        <div class="absolute top-[100px] left-[950px] glow-image hover-glow">
+                <img src="/images/sushibar.webp" class="w-[1200px] h-[400px] cursor-pointer" alt="Sushi bar" />
+        </div>
+
+        <!-- Bylukes -->
+        <div class="absolute top-[500px] left-[1400px] glow-image hover-glow">
+                <img src="/images/bylukes2.webp" class="w-[800px] h-[200px] cursor-pointer" alt="Bylukes" />
+        </div>
+
+        <!-- Event Booking Title -->
+        <div id="event-booking" class="absolute top-[1250px] left-1/2 transform -translate-x-1/2 text-center">
+            <h1 class="text-[80px] leading-[110px] font-black tracking-[4px] scale-x-[1.1]"
+                style="font-family: 'Aclonica', sans-serif;">
+                Event Booking Form
+            </h1>
+        </div>
+
+        <div class="absolute top-[1400px] left-1/2 transform -translate-x-1/2">
+            <img src="/images/redline.webp" class="w-[400px] h-[27px]" alt="redline" />
+        </div>
+
+        <!-- FORM CONTAINER -->
+        <div class="absolute top-[1600px] left-1/2 transform -translate-x-1/2 
+                    bg-[#222] p-16 rounded-3xl shadow-xl shadow-black/40
+                    w-[1200px] text-[28px]">
+
+            <form>
+
+                <!-- Event Details -->
+                <h2 class="text-[50px] mb-10 font-bold" style="font-family: 'Aclonica', sans-serif;">Event Details</h2>
+
+                <div class="grid grid-cols-1 gap-8">
+
+                    <label class="flex flex-col">
+                        Company Name:
+                        <input type="text" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Address:
+                        <input type="text" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Event Date:
+                        <input type="date" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Event Time:
+                        <input type="time" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Event Type:
+                        <input type="text" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Number of Guests:
+                        <input type="number" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                </div>
+
+                <!-- Contact Details -->
+                <h2 class="text-[50px] mt-16 mb-10 font-bold" style="font-family: 'Aclonica', sans-serif;">Contact Details</h2>
+
+                <div class="grid grid-cols-1 gap-8">
+
+                    <label class="flex flex-col">
+                        Full Name:
+                        <input type="text" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Contact Number:
+                        <input type="tel" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Email Address:
+                        <input type="email" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600">
+                    </label>
+
+                    <label class="flex flex-col">
+                        Notes / Request:
+                        <textarea rows="4" class="mt-2 p-4 rounded-lg bg-[#333] text-white focus:outline-none focus:ring-2 focus:ring-red-600"></textarea>
+                    </label>
+
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-20 flex justify-center">
+                    <button class="px-16 py-6 text-[40px] font-bold rounded-xl 
+                                   bg-[#DB3639] hover:bg-red-700 active:bg-red-900
+                                   shadow-lg shadow-red-900/40 transition-all duration-200 hover-glow pulse-glow"
+                            style="font-family: 'Aclonica', sans-serif;">
+                        Submit
+                    </button>
+                </div>
+
+
+            </form>
+
+        </div>
+
+    <!-- Footer -->
+<div class="absolute top-[4200px] left-[0px] glow-red">
+       <img src="/images/footers.webp" class="w-[3200px] h-[350px]" alt="footers" />
+</div>
+
+<div class="absolute top-[4250px] left-[300px]">
+       <img src="/images/facebook.webp" class="w-[100px] h-[100px] social-icon" alt="facebook" />
+</div>
+
+<div class="absolute top-[4250px] left-[2100px]">
+       <img src="/images/phone.webp" class="w-[100px] h-[100px] social-icon" alt="phone" />
+</div>
+
+<div class="absolute top-[4250px] left-[1150px]">
+       <img src="/images/mail.webp" class="w-[100px] h-[100px] social-icon" alt="mail" />
+</div>
+
+<div class="absolute top-[4250px] left-[430px] text-center">
+    <a href="https://www.facebook.com/lukeseafoodtrading" target="_blank">
+        <h1 class="text-[37px] leading-[110px] font-black tracking-[4px] scale-x-[1.1] origin-left underline glow-text-white hover:glow-text-red transition-all duration-300"
+            style="font-family: 'Aclonica', sans-serif;">
+            Luke's Seafood Trading
+        </h1>
+    </a>
+</div>
+
+<div class="absolute top-[4250px] left-[1300px] text-center">
+    <a href="mailto:lukesseafood28@gmail.com" target="_blank">
+        <h1 class="text-[37px] leading-[110px] font-black tracking-[4px] scale-x-[1.1] origin-left underline glow-text-white hover:glow-text-red transition-all duration-300"
+            style="font-family: 'Aclonica', sans-serif;">
+            lukesseafood28@gmail.com
+        </h1>
+    </a>
+</div>
+
+<div class="absolute top-[4250px] left-[2220px] text-center">
+    <a href="tel:09392999912" target="_blank">
+        <h1 class="text-[37px] leading-[110px] font-black tracking-[4px] scale-x-[1.1] origin-left underline glow-text-white hover:glow-text-red transition-all duration-300"
+            style="font-family: 'Aclonica', sans-serif;">
+            09392999912
+        </h1>
+    </a>
+</div>
+
+<div class="absolute top-[4400px] left-[800px] text-center">
+        <h1 class="text-[37px] leading-[110px] font-black tracking-[4px] scale-x-[1.1] origin-left glow-text-white"
+            style="font-family: 'Aclonica', sans-serif;">
+            © 2025 Luke's Seafood Trading | All Rights Reserved
+        </h1>
+</div>
+
+
+    </section>
+
+</main>
+
+</body>
+</html>
